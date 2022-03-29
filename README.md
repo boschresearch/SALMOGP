@@ -1,10 +1,10 @@
 # Safe Active Learning for Multi-Output Gaussian Processes
 
-This is the companion code for the AISTATS 2022 paper [Safe Active Learning for Multi-Output Gaussian Processes](https://). The code allows the users to reproduce and extend the results reported in the study. Please cite the above paper when reporting, reproducing or extending the results.
+This is the companion code for the AISTATS 2022 paper [Safe Active Learning for Multi-Output Gaussian Processes](https://doi.org/10.48550/arXiv.2203.14849). The code allows the users to reproduce and extend the results reported in the study. Please cite the above paper when reporting, reproducing or extending the results.
 
 ## Purpose of the project
 
-This software is a research prototype, solely developed for and published as part of the publication [SAL for MOGP](https://). It will neither be maintained nor monitored in any way.
+This software is a research prototype, solely developed for and published as part of the publication [SAL for MOGP](https://doi.org/10.48550/arXiv.2203.14849). It will neither be maintained nor monitored in any way.
 The general goal is to perform safe active learning on multi-output regression data. The data set comprise (x, y, z), which are input, output, and safety output. The variable z may or may not be one of the components of y. The output y can be obtained asynchronously (e.g. y=(nan, 0.2, nan, nan)).
 
 ## Setup
@@ -39,7 +39,7 @@ To generate GP dataset with default setting, run:
 ```
 python 0_GP_data_sampler.py
 ```
-Afterwards, the data description can be checked here [data/GP_samples/data_parameters.txt](data/GP_samples/data_parameters.txt). Notice that the safety values' distribution is dependent on the seed, and the parameter safety_threshold (<img src="https://render.githubusercontent.com/render/math?math=z_{bar}"> in the paper) in the experiment should be set accordingly.
+Afterwards, the data description can be checked here `./data/GP_samples/data_parameters.txt`. Notice that the safety values' distribution is dependent on the seed, and the parameter safety_threshold (<img src="https://render.githubusercontent.com/render/math?math=z_{bar}"> in the paper) in the experiment should be set accordingly.
 
 To see all parser arguments, run:
 ```
@@ -48,7 +48,7 @@ python 0_GP_data_sampler.py --help
 
 -------
 
-The raw data are provided in [Bosch-Engine-Datasets/gengine1](https://github.com/boschresearch/Bosch-Engine-Datasets/tree/master/gengine1). Copy the raw csv files, put them into [data](data), and run the followings to obtain the OWEO data taken by the experiment scripts:
+The raw data are provided in [Bosch-Engine-Datasets/gengine1](https://github.com/boschresearch/Bosch-Engine-Datasets/tree/master/gengine1). Copy the raw csv files, put them into the folder `./data`, and run the followings to obtain the OWEO data taken by the experiment scripts:
 ```
 python 0_load_csv_addNXstructures.py --mode training
 python 0_load_csv_addNXstructures.py --mode test
